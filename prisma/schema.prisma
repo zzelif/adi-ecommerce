@@ -8,14 +8,20 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum ProductType {
+  candle
+  magnet
+}
+
 model Product {
-  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  id          String      @id @default(auto()) @map("_id") @db.ObjectId
   description String
   imageUrl    String
   name        String
   price       Int
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  type        ProductType
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
 
   @@map("products")
 }
