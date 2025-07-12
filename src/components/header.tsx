@@ -1,13 +1,22 @@
 import Link from "next/link";
+import { ChevronsLeftRightEllipsis } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-50 backdrop-blur">
-      <div className="navbar bg-base-100 justify-between shadow-sm">
-        <div className="navbar-start">
-          <Link className="btn btn-ghost text-md text-blue-500" href="/">
-            444
-          </Link>
+    <header className="bg-background sticky top-0 z-50 w-full border-b py-3">
+      <nav className="container flex items-center justify-between px-2 pl-10 shadow-sm sm:px-4 lg:px-6">
+        <div className="navbar-start mx-auto gap-6">
+          <Button
+            asChild
+            variant={"ghost"}
+            className="inline-flex gap-2 hover:bg-transparent"
+          >
+            <Link className="text-md font-semibold text-slate-950" href="/">
+              <ChevronsLeftRightEllipsis />
+              444
+            </Link>
+          </Button>
         </div>
         <div className="navbar-end gap-6">
           <Link className="btn btn-ghost w-auto" href="/">
@@ -36,7 +45,7 @@ const Header = () => {
             Pricelist
           </Link>
         </div>
-      </div>
+      </nav>
     </header>
   );
 };

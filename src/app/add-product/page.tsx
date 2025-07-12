@@ -45,7 +45,7 @@ async function addProduct(formData: FormData) {
     );
   }
 
-  const imageUrl = `assets/images/${imageFolders[productType]}/${productType}${imageNumber}.png`;
+  const imageUrl = `/assets/images/${imageFolders[productType]}/${productType}${imageNumber}.png`;
 
   await prisma.product.create({
     data: { name, description, imageUrl, price, type }
